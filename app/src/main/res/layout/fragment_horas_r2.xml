@@ -1,0 +1,144 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/VerdeClaro"
+    tools:context="com.sandra.xcavapp.HorasR2Fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:src="@drawable/excava2"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Htrab"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/Amaril"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/fecha"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:id="@+id/eFechaT2"
+        android:inputType="date"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/Hini"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:id="@+id/eHInicialT2"
+            android:inputType="time"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/Hfin"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:id="@+id/eHFinalT2"
+            android:inputType="time"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/AddHora"
+        android:textSize="12sp"
+        android:textColor="@color/Amaril"
+        android:id="@+id/bAddHT2"
+        android:layout_gravity="center"
+        android:background="@drawable/boton_redondeado"
+        android:padding="5dp"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/HMan"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/Amaril"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/fecha"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:id="@+id/eFechaM2"
+        android:inputType="date"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/Hini"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:id="@+id/eHInicialM2"
+            android:inputType="time"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/Hfin"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:id="@+id/eHFinalM2"
+            android:inputType="time"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/AddHoraM"
+        android:textSize="12sp"
+        android:textColor="@color/Amaril"
+        android:id="@+id/bAddHM2"
+        android:layout_gravity="center"
+        android:background="@drawable/boton_redondeado"
+        android:padding="5dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/verh"
+        android:textSize="12sp"
+        android:textColor="@color/Amaril"
+        android:id="@+id/bVerH2"
+        android:layout_gravity="center"
+        android:background="@drawable/boton_redondeado"
+        android:padding="5dp"/>
+
+</LinearLayout>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_registro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/VerdeClaro"
+    tools:context="com.sandra.xcavapp.RegistroActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/registro"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/Amaril"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/reg"
+        android:layout_gravity="center"
+        android:id="@+id/imageView" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="@string/username"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:id="@+id/eRUsername"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="@string/password"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:id="@+id/eRContrasena"
+        android:inputType="textPassword"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="@string/repitpassword"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:id="@+id/eRRepContrasena"
+        android:inputType="textPassword"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="@string/email"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:id="@+id/eRCorreo"
+        android:inputType="textEmailAddress"/>
+
+    <!--<RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/rgroup"
+        android:gravity="center">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Administrador"
+            android:textSize="15dp"
+            android:id="@+id/rbAdmin"
+            android:gravity="center"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Operador"
+            android:textSize="15dp"
+            android:id="@+id/rbOpera"
+            android:gravity="center"/>
+
+    </RadioGroup>-->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registreseAdm"
+        android:textSize="10sp"
+        android:textColor="@color/Amaril"
+        android:layout_gravity="center"
+        android:id="@+id/bRegAdm"
+        android:background="@drawable/boton_redondeado"
+        android:layout_margin="3dp"
+        android:padding="5dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:weightSum="1">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Retro1"
+            android:id="@+id/cbR1"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Retro2"
+            android:id="@+id/cbR2"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registreseOpe"
+        android:textSize="10sp"
+        android:textColor="@color/Amaril"
+        android:layout_gravity="center"
+        android:id="@+id/bRegOpe"
+        android:background="@drawable/boton_redondeado"
+        android:layout_margin="3dp"
+        android:padding="5dp"/>
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/registrese"
+            android:textSize="10sp"
+            android:textColor="@color/Amaril"
+            android:layout_gravity="center"
+            android:id="@+id/bRegistrar"
+            android:background="@drawable/boton_redondeado"
+            android:layout_margin="3dp"/>
+
+        <Button
+            android:layout_width="69dp"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:textSize="10sp"
+            android:textColor="@color/Amaril"
+            android:layout_gravity="center"
+            android:id="@+id/bCancelar"
+            android:background="@drawable/boton_redondeado"
+            android:layout_margin="3dp"/>
+
+    </LinearLayout>-->
+
+    <Button
+        android:layout_width="69dp"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:textSize="10sp"
+        android:textColor="@color/Amaril"
+        android:layout_gravity="center"
+        android:id="@+id/bCancelar"
+        android:background="@drawable/boton_redondeado"
+        android:layout_margin="3dp"
+        android:padding="5dp"/>
+
+</LinearLayout>

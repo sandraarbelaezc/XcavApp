@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_voqueta"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/VerdeClaro"
+    tools:context="com.sandra.xcavapp.AddVoquetaActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/volqueta"
+        android:layout_gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/placa"
+            android:textSize="25sp"
+            android:textStyle="italic"
+            android:textColor="@color/Amaril"
+
+            android:gravity="center"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/placa"
+            android:textSize="20sp"
+            android:id="@+id/ePlaca"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cap"
+            android:textSize="25sp"
+            android:textStyle="italic"
+            android:textColor="@color/Amaril"
+
+            android:gravity="center"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/m2"
+            android:textSize="20sp"
+            android:id="@+id/eCap"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/add"
+            android:textSize="15sp"
+            android:textColor="@color/Amaril"
+            android:id="@+id/bAdd"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@drawable/boton_redondeado"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/add"
+            android:textSize="15sp"
+            android:textColor="@color/Amaril"
+            android:id="@+id/bCanc"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@drawable/boton_redondeado"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

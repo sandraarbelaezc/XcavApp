@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/VerdeClaro"
+    tools:context="com.sandra.xcavapp.LoginActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/XcavApp"
+        android:textSize="35sp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/Amaril"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/excavap"
+        android:layout_gravity="center" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="@string/username"
+        android:id="@+id/eUsername"
+        android:textSize="20sp"
+        android:gravity="center"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="@string/password"
+        android:textSize="20sp"
+        android:id="@+id/eContrasena"
+        android:gravity="center"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/iniciar"
+        android:textSize="15sp"
+        android:textColor="@color/Amaril"
+        android:id="@+id/bInciar"
+        android:layout_gravity="center"
+        android:background="@drawable/boton_redondeado"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/registrese"
+        android:textSize="20sp"
+        android:id="@+id/tRegistrese"
+        android:textColor="@color/VerdeOscuro"
+        android:gravity="center"/>
+
+
+</LinearLayout>

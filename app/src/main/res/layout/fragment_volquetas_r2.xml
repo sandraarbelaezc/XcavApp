@@ -1,0 +1,35 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/VerdeClaro"
+    tools:context="com.sandra.xcavapp.VolquetasR2Fragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/lista">
+
+        </ListView>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/addVolq"
+            android:textSize="12sp"
+            android:textColor="@color/Amaril"
+            android:id="@+id/bAddV"
+            android:layout_gravity="center"
+            android:background="@drawable/boton_redondeado"
+            android:padding="5dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</FrameLayout>

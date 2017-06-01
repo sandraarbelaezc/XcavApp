@@ -4,7 +4,16 @@
     android:layout_height="match_parent"
     android:background="@color/VerdeClaro"
     android:orientation="vertical"
+    android:id="@+id/horasR1"
     tools:context="com.sandra.xcavapp.HorasFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/layout"
+        android:visibility="visible">
+
 
     <!-- TODO: Update blank fragment layout -->
     <ImageView
@@ -140,5 +149,7 @@
         android:layout_gravity="center"
         android:background="@drawable/boton_redondeado"
         android:padding="5dp"/>
+
+    </LinearLayout>
 
 </LinearLayout>

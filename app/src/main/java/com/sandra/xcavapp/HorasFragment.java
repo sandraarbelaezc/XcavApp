@@ -4,12 +4,16 @@ package com.sandra.xcavapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 
+import com.google.android.gms.vision.text.Line;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.sandra.xcavapp.Objetos.HorasMantenimiento;
@@ -24,6 +28,7 @@ public class HorasFragment extends Fragment {
 
     EditText eFechaT1, eHInicialT1, eHFinalT1, eFechaM1, eHInicialM1, eHFinalM1;
     Button bVerH, bAddHT1, bAddHM1;
+    LinearLayout layout;
 
     //************BASE DE DATOS***************
     public final String TAG_HTRABAJADAS="Horas trabajadas";
@@ -59,6 +64,8 @@ public class HorasFragment extends Fragment {
         eHInicialM1 = (EditText) view.findViewById(R.id.eHInicialM1);
         eHFinalT1 = (EditText) view.findViewById(R.id.eHFinalT1);
         eHFinalM1 = (EditText) view.findViewById(R.id.eHFinalM1);
+        layout = (LinearLayout) view.findViewById(R.id.layout);
+
 
         //*************BASE DE DATOS*****************************
         database = FirebaseDatabase.getInstance();
@@ -109,12 +116,19 @@ public class HorasFragment extends Fragment {
         bVerH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), HTrabR1Fragment.class);
-                startActivity(intent);
+
+                layout.setVisibility(View.GONE);
+                Fragment fragment = new HTrabR1Fragment();
+                FragmentActivity myContext = (FragmentActivity) getActivity();
+                myContext.getSupportFragmentManager().beginTransaction().replace(R.id.horasR1, fragment).commit();
+                //Intent intent = new Intent(getContext(), HTrabR1Fragment.class);
+                //startActivity(intent);
             }
         });
 
         return view;
     }
+
+
 
 }

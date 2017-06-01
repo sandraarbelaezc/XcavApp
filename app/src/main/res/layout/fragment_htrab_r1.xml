@@ -1,16 +1,23 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/VerdeClaro"
-    android:orientation="vertical"
-    tools:context="com.sandra.xcavapp.HTrabR1Fragment">
+    >
 
-    <ListView
-        android:layout_width="match_parent"
+<android.support.v7.widget.RecyclerView
+
+    android:id="@+id/recicladorHTrabajadas"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/lista">
+        android:layout_gravity="bottom|end"
+        android:id="@+id/atras"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_close_dark"
+        />
 
-    </ListView>
-
-</LinearLayout>
+    </FrameLayout>

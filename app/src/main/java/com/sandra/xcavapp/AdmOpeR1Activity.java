@@ -125,7 +125,6 @@ public class AdmOpeR1Activity extends AppCompatActivity
         return true;
     }
 
-
     /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -206,7 +205,8 @@ public class AdmOpeR1Activity extends AppCompatActivity
                     VolquetaFragment tab2 = new VolquetaFragment();
                     return tab2;
                 case 2:
-                    MapaFragment tab3 = new MapaFragment();
+                    //MapaFragment tab3 = new MapaFragment();
+                    VolquetaFragment tab3 = new VolquetaFragment();
                     return tab3;
                 default: return null;
             }

@@ -140,7 +140,8 @@ public class OperaR1Activity extends AppCompatActivity {
                     VolquetaFragment tab2 = new VolquetaFragment();
                     return tab2;
                 case 2:
-                    MapaFragment tab3 = new MapaFragment();
+                    VolquetaFragment tab3 = new VolquetaFragment();
+                    //MapaFragment tab3 = new MapaFragment();
                     return tab3;
                 default: return null;
             }

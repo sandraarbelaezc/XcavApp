@@ -12,6 +12,12 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.sandra.xcavapp.Objetos.Administradores;
+import com.sandra.xcavapp.Objetos.Operadores;
+
+
 public class RegistroActivity extends AppCompatActivity {
 
     EditText eRUsername, eRContrasena, eRRepContrasena, eRCorreo;
@@ -20,6 +26,24 @@ public class RegistroActivity extends AppCompatActivity {
     RadioButton rbAdmin, rbOpera;
     CheckBox cbR1, cbR2;
     Intent intent;
+
+
+    //******************BASE DE DATOS**************************
+    public final String TAG_OPERADORES="Operadores";
+    public final String TAG_ADMINISTRADORES="Administradores";
+
+    String Usuario, Contraseña, Correo, Id;
+    int idC=0;
+
+    FirebaseDatabase database;
+    DatabaseReference myRef;
+
+    Operadores operadores;
+    Administradores administradores;
+
+    //DatabaseReference myRef;
+    //final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    //**********************************************************
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,19 +67,52 @@ public class RegistroActivity extends AppCompatActivity {
         cbR1 = (CheckBox) findViewById(R.id.cbR1);
         cbR2 = (CheckBox) findViewById(R.id.cbR2);
 
+        database = FirebaseDatabase.getInstance();
+
         bRegAdm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(RegistroActivity.this, LoginActivity.class);
-                startActivity(intent);
+
+                //***********BASE DE DATOS*********************
+
+                Usuario = eRUsername.getText().toString();
+                Contraseña = eRContrasena.getText().toString();
+                Correo = eRCorreo.getText().toString();
+
+                myRef = database.getReference().child(TAG_ADMINISTRADORES);
+                administradores = new Administradores(Id, Usuario, Contraseña, Correo);
+
+                myRef.child(String.valueOf(idC)).setValue(administradores);
+                idC++;
+
+                //*********************************************
+
+                //intent = new Intent(RegistroActivity.this, LoginActivity.class);
+                //startActivity(intent);
             }
         });
 
         bRegOpe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(RegistroActivity.this, LoginActivity.class);
-                startActivity(intent);
+
+
+                //***********BASE DE DATOS*********************
+
+                Usuario = eRUsername.getText().toString();
+                Contraseña = eRContrasena.getText().toString();
+                Correo = eRCorreo.getText().toString();
+                Id = "Hitachi";
+
+                myRef = database.getReference().child(TAG_OPERADORES);
+                operadores = new Operadores(Id, Usuario, Contraseña, Correo);
+
+                myRef.child(Id).setValue(operadores);
+
+                //*********************************************
+
+                //intent = new Intent(RegistroActivity.this, LoginActivity.class);
+                //startActivity(intent);
             }
         });
 

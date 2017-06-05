@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "144742336816",
+    "firebase_url": "https://xcavapp.firebaseio.com",
+    "project_id": "xcavapp",
+    "storage_bucket": "xcavapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144742336816:android:77468dfa57e64c77",
+        "android_client_info": {
+          "package_name": "com.sandra.xcavapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144742336816-g4f88q64halokk5t7qrtjlmi2hb47igr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sandra.xcavapp",
+            "certificate_hash": "d7f84f4a8a08870c7faabf245a65af844b541061"
+          }
+        },
+        {
+          "client_id": "144742336816-9hpihu365tbai7kddhctfl4ckti3a0d0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHp2Y-3yPmijQim-cvKfT-gKLlx6VYMZg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "144742336816-9hpihu365tbai7kddhctfl4ckti3a0d0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -2,6 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/VerdeClaro"
     >
 
 <android.support.v7.widget.RecyclerView
@@ -17,7 +18,7 @@
         android:layout_gravity="bottom|end"
         android:id="@+id/atras"
         android:layout_margin="16dp"
-        android:src="@drawable/ic_close_dark"
+        android:src="@drawable/ic_menu_gallery"
         />
 
     </FrameLayout>

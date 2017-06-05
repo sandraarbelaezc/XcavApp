@@ -68,34 +68,18 @@
         android:id="@+id/eRCorreo"
         android:inputType="textEmailAddress"/>
 
-    <!--<RadioGroup
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:id="@+id/rgroup"
-        android:gravity="center">
+        android:hint="@string/retro"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:id="@+id/eRetro"/>
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/Administrador"
-            android:textSize="15dp"
-            android:id="@+id/rbAdmin"
-            android:gravity="center"/>
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/Operador"
-            android:textSize="15dp"
-            android:id="@+id/rbOpera"
-            android:gravity="center"/>
 
-    </RadioGroup>-->
-
-    <Button
+    <!--Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/registreseAdm"
@@ -137,9 +121,9 @@
         android:id="@+id/bRegOpe"
         android:background="@drawable/boton_redondeado"
         android:layout_margin="3dp"
-        android:padding="5dp"/>
+        android:padding="5dp"/>-->
 
-    <!--<LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -167,9 +151,9 @@
             android:background="@drawable/boton_redondeado"
             android:layout_margin="3dp"/>
 
-    </LinearLayout>-->
+    </LinearLayout>
 
-    <Button
+    <!--<Button
         android:layout_width="69dp"
         android:layout_height="wrap_content"
         android:text="@string/cancel"
@@ -179,6 +163,6 @@
         android:id="@+id/bCancelar"
         android:background="@drawable/boton_redondeado"
         android:layout_margin="3dp"
-        android:padding="5dp"/>
+        android:padding="5dp"/>-->
 
 </LinearLayout>

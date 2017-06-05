@@ -3,6 +3,7 @@ package com.sandra.xcavapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -29,6 +30,7 @@ public class HorasFragment extends Fragment {
     EditText eFechaT1, eHInicialT1, eHFinalT1, eFechaM1, eHInicialM1, eHFinalM1;
     Button bVerH, bAddHT1, bAddHM1;
     LinearLayout layout;
+    int con=0;
 
     //************BASE DE DATOS***************
     public final String TAG_HTRABAJADAS="Horas trabajadas";
@@ -79,14 +81,16 @@ public class HorasFragment extends Fragment {
                 Fecha = eFechaT1.getText().toString();
                 HInicial = eHInicialT1.getText().toString();
                 HFinal = eHFinalT1.getText().toString();
-                Id = "Hitachi";
-                THoras = "Horas";
-                TPagar = "Pago";
+                Id = "Retro1";
+                THoras = "THoras";
+                TPagar = "TPago";
+
+
 
                 myRef = database.getReference().child(TAG_HTRABAJADAS);
                 horasTrab = new HorasTrabajadas(Id, Fecha, HInicial, HFinal, THoras, TPagar);
 
-                myRef.child(Id).setValue(horasTrab);
+                myRef.child(Id).child(Fecha).setValue(horasTrab);
                 //********************************************
 
             }
@@ -100,14 +104,14 @@ public class HorasFragment extends Fragment {
                 Fecha = eFechaM1.getText().toString();
                 HInicial = eHInicialM1.getText().toString();
                 HFinal = eHFinalM1.getText().toString();
-                Id = "Hitachi";
-                THoras = "Horas";
-                TPagar = "Pago";
+                Id = "Retro1";
+                THoras = "THoras";
+                TPagar = "TPago";
 
                 myRef = database.getReference().child(TAG_HMANTENIMIENTO);
                 horasMant = new HorasMantenimiento(Id, Fecha, HInicial, HFinal, THoras, TPagar);
 
-                myRef.child(Id).setValue(horasMant);
+                myRef.child(Id).child(Fecha).setValue(horasMant);
                 //********************************************
 
             }
@@ -128,7 +132,5 @@ public class HorasFragment extends Fragment {
 
         return view;
     }
-
-
 
 }

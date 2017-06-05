@@ -57,8 +57,8 @@ public class HTrabR1Fragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), OperaR1Activity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(getContext(), OperaR1Activity.class);
+                //startActivity(intent);
             }
         });
 
@@ -75,7 +75,7 @@ public class HTrabR1Fragment extends Fragment {
             }
         });*/
 
-        database.getReference("Horas trabajadas").addChildEventListener(new ChildEventListener() {
+        database.getReference("Horas trabajadas").child("Retro1").addChildEventListener(new ChildEventListener() {
 
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {

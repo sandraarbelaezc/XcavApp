@@ -8,7 +8,7 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -16,16 +16,24 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
         <activity android:name=".MainActivity" />
-        <activity android:name=".SplashActivity" >
-        </activity>
+        <activity android:name=".SplashActivity"></activity>
         <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".RegistroActivity" />
         <activity
             android:name=".AdminR1Activity"
             android:label="@string/title_activity_admin_r1"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".AdminR2Activity"
             android:label="@string/title_activity_admin_r2"
@@ -33,13 +41,7 @@
         <activity
             android:name=".OperaR1Activity"
             android:label="@string/title_activity_opera_r1"
-            android:theme="@style/AppTheme.NoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".OperaR2Activity"
             android:label="@string/title_activity_opera_r2"
@@ -69,7 +71,8 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".AddViajeActivity" />
-        <activity android:name=".AddVoquetaActivity"></activity>
+        <activity android:name=".AddVoquetaActivity" />
+        <activity android:name=".RetroActivity"></activity>
     </application>
 
 </manifest>

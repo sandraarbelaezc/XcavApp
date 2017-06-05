@@ -20,6 +20,8 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.facebook.login.LoginManager;
+
 public class OperaR2Activity extends AppCompatActivity {
 
     /**
@@ -75,6 +77,7 @@ public class OperaR2Activity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            LoginManager.getInstance().logOut();
             Intent intent = new Intent(OperaR2Activity.this, LoginActivity.class);
             startActivity(intent);
             finish();
@@ -140,10 +143,6 @@ public class OperaR2Activity extends AppCompatActivity {
                 case 1:
                     VolquetasR2Fragment tab2 = new VolquetasR2Fragment();
                     return tab2;
-                case 2:
-                    VolquetasR2Fragment tab3 = new VolquetasR2Fragment();
-                    //MapaR2Fragment tab3 = new MapaR2Fragment();
-                    return tab3;
                 default: return null;
             }
         }
@@ -151,7 +150,7 @@ public class OperaR2Activity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 2;
         }
 
         @Override
@@ -161,8 +160,6 @@ public class OperaR2Activity extends AppCompatActivity {
                     return "Horas de trabajo";
                 case 1:
                     return "Volquetas";
-                case 2:
-                    return "Mapa";
             }
             return null;
         }

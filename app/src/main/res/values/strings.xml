@@ -66,4 +66,9 @@
     <string name="placa">Placa</string>
     <string name="cap">Capacidad</string>
     <string name="m2">m3</string>
+    <string name="retro">Retroexcavadora</string>
+
+    <string name="facebook_app_id">270322246774267</string>
+    <string name="Nombre">Nombre</string>
+    <string name="Correo">Correo</string>
 </resources>

@@ -204,10 +204,6 @@ public class AdmOpeR1Activity extends AppCompatActivity
                 case 1:
                     VolquetaFragment tab2 = new VolquetaFragment();
                     return tab2;
-                case 2:
-                    //MapaFragment tab3 = new MapaFragment();
-                    VolquetaFragment tab3 = new VolquetaFragment();
-                    return tab3;
                 default: return null;
             }
         }
@@ -215,7 +211,7 @@ public class AdmOpeR1Activity extends AppCompatActivity
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 2;
         }
 
         @Override
@@ -225,8 +221,6 @@ public class AdmOpeR1Activity extends AppCompatActivity
                     return "Horas trabajadas";
                 case 1:
                     return "Volquetas";
-                case 2:
-                    return "Mapa";
             }
             return null;
         }

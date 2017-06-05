@@ -20,6 +20,9 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.facebook.login.LoginManager;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class OperaR1Activity extends AppCompatActivity {
 
     /**
@@ -74,6 +77,8 @@ public class OperaR1Activity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            LoginManager.getInstance().logOut();
+            FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(OperaR1Activity.this, LoginActivity.class);
             startActivity(intent);
             finish();
@@ -139,10 +144,6 @@ public class OperaR1Activity extends AppCompatActivity {
                 case 1:
                     VolquetaFragment tab2 = new VolquetaFragment();
                     return tab2;
-                case 2:
-                    VolquetaFragment tab3 = new VolquetaFragment();
-                    //MapaFragment tab3 = new MapaFragment();
-                    return tab3;
                 default: return null;
             }
         }
@@ -150,7 +151,7 @@ public class OperaR1Activity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 2;
         }
 
         @Override
@@ -160,8 +161,6 @@ public class OperaR1Activity extends AppCompatActivity {
                     return "Horas de trabajo";
                 case 1:
                     return "Volquetas";
-                case 2:
-                    return "Mapa";
             }
             return null;
         }

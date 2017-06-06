@@ -203,7 +203,7 @@ public class AdminR2Activity extends AppCompatActivity
                     HMantR2Fragment tab2 = new HMantR2Fragment();
                     return tab2;
                 case 2:
-                    VolqR2Fragment tab3 = new VolqR2Fragment();
+                    VolqR1Fragment tab3 = new VolqR1Fragment();
                     return tab3;
                 default: return null;
             }

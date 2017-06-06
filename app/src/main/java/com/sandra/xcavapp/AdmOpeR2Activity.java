@@ -199,10 +199,10 @@ public class AdmOpeR2Activity extends AppCompatActivity
             //return PlaceholderFragment.newInstance(position + 1);
             switch (position){
                 case 0:
-                    HorasR2Fragment tab1 = new HorasR2Fragment();
+                    Horas2Fragment tab1 = new Horas2Fragment();
                     return tab1;
                 case 1:
-                    VolquetasR2Fragment tab2 = new VolquetasR2Fragment();
+                    VolquetaFragment tab2 = new VolquetaFragment();
                     return tab2;
                 default: return null;
             }

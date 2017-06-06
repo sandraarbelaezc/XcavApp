@@ -15,18 +15,18 @@
 
         <ImageView
             android:id="@+id/imagen"
-            android:layout_width="150dp"
+            android:layout_width="140dp"
             android:layout_height="150dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/excpequena"
+            android:src="@drawable/volqueta"
             android:layout_alignParentTop="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Fecha"
-            android:id="@+id/cardFecha"
+            android:text="Placa"
+            android:id="@+id/cardPlaca"
             android:layout_toRightOf="@+id/imagen"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="10dp" />
@@ -35,19 +35,37 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="T Horas"
-            android:id="@+id/cardTHoras"
-            android:layout_below="@+id/cardFecha"
-            android:layout_alignLeft="@+id/cardTPagar"
+            android:text="Capacidad"
+            android:id="@+id/cardCap"
+            android:layout_below="@+id/cardPlaca"
+            android:layout_alignLeft="@+id/cardnVi"
             android:layout_toRightOf="@+id/imagen"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="T pagar"
+            android:text="Nº viajes"
+            android:id="@+id/cardnVi"
+            android:layout_below="@+id/cardCap"
+            android:layout_toRightOf="@+id/imagen"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Distancia"
+            android:id="@+id/cardDist"
+            android:layout_below="@+id/cardnVi"
+            android:layout_toRightOf="@+id/imagen"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="T Pagar"
             android:id="@+id/cardTPagar"
-            android:layout_below="@+id/cardTHoras"
+            android:layout_below="@+id/cardDist"
             android:layout_toRightOf="@+id/imagen"/>
 
 

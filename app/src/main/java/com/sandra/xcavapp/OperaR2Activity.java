@@ -21,6 +21,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.facebook.login.LoginManager;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class OperaR2Activity extends AppCompatActivity {
 
@@ -78,6 +79,7 @@ public class OperaR2Activity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             LoginManager.getInstance().logOut();
+            FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(OperaR2Activity.this, LoginActivity.class);
             startActivity(intent);
             finish();
@@ -138,10 +140,10 @@ public class OperaR2Activity extends AppCompatActivity {
             //return PlaceholderFragment.newInstance(position + 1);
             switch (position){
                 case 0:
-                    HorasR2Fragment tab1 = new HorasR2Fragment();
+                    Horas2Fragment tab1 = new Horas2Fragment();
                     return tab1;
                 case 1:
-                    VolquetasR2Fragment tab2 = new VolquetasR2Fragment();
+                    VolquetaFragment tab2 = new VolquetaFragment();
                     return tab2;
                 default: return null;
             }

@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Fecha"
-            android:id="@+id/cardFecha"
+            android:id="@+id/cardFecha2"
             android:layout_toRightOf="@+id/imagen"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="10dp" />
@@ -36,9 +36,9 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="T Horas"
-            android:id="@+id/cardTHoras"
-            android:layout_below="@+id/cardFecha"
-            android:layout_alignLeft="@+id/cardTPagar"
+            android:id="@+id/cardTHoras2"
+            android:layout_below="@+id/cardFecha2"
+            android:layout_alignLeft="@+id/cardTPagar2"
             android:layout_toRightOf="@+id/imagen"/>
 
         <TextView
@@ -46,8 +46,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="T pagar"
-            android:id="@+id/cardTPagar"
-            android:layout_below="@+id/cardTHoras"
+            android:id="@+id/cardTPagar2"
+            android:layout_below="@+id/cardTHoras2"
             android:layout_toRightOf="@+id/imagen"/>
 
 

@@ -21,19 +21,22 @@
             android:value="@string/facebook_app_id" />
 
         <activity android:name=".MainActivity" />
-        <activity android:name=".SplashActivity"></activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".LoginActivity">
+        </activity>
         <activity android:name=".RegistroActivity" />
         <activity
             android:name=".AdminR1Activity"
             android:label="@string/title_activity_admin_r1"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
         <activity
             android:name=".AdminR2Activity"
             android:label="@string/title_activity_admin_r2"

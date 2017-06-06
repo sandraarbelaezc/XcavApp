@@ -5,7 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +16,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.sandra.xcavapp.Objetos.HorasMantenimiento;
+import com.sandra.xcavapp.Objetos.Volquetas;
+
+import java.util.ArrayList;
 
 
 /**
@@ -22,12 +34,10 @@ public class VolqR1Fragment extends Fragment {
 
     Intent intent;
 
-    private Lista_EntradaV[] datos = new Lista_EntradaV[] {
-            new Lista_EntradaV("RDT456", "6 "),
-            new Lista_EntradaV("SEV378", "2"),
-            new Lista_EntradaV("LGC274", "4"),
-            new Lista_EntradaV("GCR541", "5")
-    };
+    private RecyclerView recycler;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager lManager;
+    public static ArrayList<Volquetas> items;
 
 
     public VolqR1Fragment() {
@@ -41,11 +51,18 @@ public class VolqR1Fragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_volq_r1, container, false);
 
-        list = (ListView) view.findViewById(R.id.lista);
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-        VolqR1Fragment.Adapter adapter = new VolqR1Fragment.Adapter(getContext(),datos);
+        items = new ArrayList<Volquetas>();
 
-        list.setAdapter(adapter);
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.atras);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), AddVoquetaActivity.class);
+                startActivity(intent);
+            }
+        });
 
         /*list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -60,30 +77,80 @@ public class VolqR1Fragment extends Fragment {
             }
         });*/
 
+        database.getReference("Volquetas").addChildEventListener(new ChildEventListener() {
+
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                if (dataSnapshot != null && dataSnapshot.getValue() != null) {
+
+                    Volquetas parqueadero = dataSnapshot.getValue(Volquetas.class);
+                    items.add(parqueadero);
+                    //adapter.notifyDataSetChanged();
+                    adapter.notifyItemInserted(items.size() - 1);
+
+                }
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                String key = dataSnapshot.getKey();
+                Volquetas parqueadero = dataSnapshot.getValue(Volquetas.class);
+                for (Volquetas cl:items
+                        ) {if(cl.getPlaca().equals(key)){
+                    cl.setCapacidad(parqueadero.getCapacidad());
+                    cl.setDistancia(parqueadero.getDistancia());
+                    cl.setNViajes(parqueadero.getNViajes());
+                    cl.setTPagar(parqueadero.getTPagar());
+                    break;
+
+                }
+
+                }
+
+                adapter.notifyDataSetChanged();
+                /*
+                items.add(parqueadero);
+                adapter.notifyItemInserted(items.size() - 1);
+                //adapter.notifyItemChanged(Integer.parseInt(parqueadero.getCedula()));
+                adapter.notifyDataSetChanged();*/
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        recycler = (RecyclerView) view.findViewById(R.id.recicladorAddVolqueta);
+        recycler.setHasFixedSize(true);
+
+        // Usar un administrador para LinearLayout
+        lManager = new LinearLayoutManager(this.getContext());
+        recycler.setLayoutManager(lManager);
+
+
+        // Crear un nuevo adaptador
+
+        adapter = new AddVolquetaAdapter(items,this.getContext());
+        recycler.setAdapter(adapter);
+
+
+
+        // Inflate the layout for this fragment
+        //return inflater.inflate(R.layout.fragment_fragmentmostrar, container, false);
+
         return view;
-    }
-
-    public class Adapter extends ArrayAdapter<Lista_EntradaV> {
-
-        public Adapter(Context context, Lista_EntradaV[] datos) {
-            super(context, R.layout.listview_itemvadm, datos);
-        }
-
-        public View getView(int position, View convertView, ViewGroup parent){
-
-            LayoutInflater inflater = LayoutInflater.from(getContext());
-            View item = inflater.inflate(R.layout.listview_itemvadm, null, true);
-
-            TextView tVolq = (TextView) item.findViewById(R.id.tVolq);
-            tVolq.setText(datos[position].getVolqP());
-
-            TextView tNumV = (TextView) item.findViewById(R.id.tNumV);
-            tNumV.setText(datos[position].getNViajes());
-
-
-            return item;
-        }
-
     }
 
     @Override

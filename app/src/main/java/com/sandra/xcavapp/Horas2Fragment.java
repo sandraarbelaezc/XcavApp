@@ -1,9 +1,8 @@
 package com.sandra.xcavapp;
 
-
-import android.content.Intent;
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
@@ -19,29 +18,28 @@ import com.sandra.xcavapp.Objetos.HorasMantenimiento;
 import com.sandra.xcavapp.Objetos.HorasTrabajadas;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class HorasR2Fragment extends Fragment {
+public class Horas2Fragment extends Fragment {
 
     EditText eFechaT2, eHInicialT2, eHFinalT2, eFechaM2, eHInicialM2, eHFinalM2;
-    Button bVerH, bAddHT2, bAddHM2;
+    Button bVerH2, bAddHT2, bAddHM2;
+    LinearLayout layout2;
+    int con=0;
 
     //************BASE DE DATOS***************
-   // public final String TAG_HTRABAJADAS="Horas trabajadas";
-    //public final String TAG_HMANTENIMIENTO="Horas de mantenimiento";
+    public final String TAG_HTRABAJADAS="Horas trabajadas";
+    public final String TAG_HMANTENIMIENTO="Horas de mantenimiento";
 
-    //String Id, Fecha, HInicial, HFinal, THoras, TPagar;
+    String Id, Fecha, HInicial, HFinal, THoras, TPagar;
 
-    /*HorasTrabajadas horasTrab2;
-    HorasMantenimiento horasMant2;
+    HorasTrabajadas horasTrab;
+    HorasMantenimiento horasMant;
 
     FirebaseDatabase database;
-    DatabaseReference myRef;*/
+    DatabaseReference myRef;
 
     //****************************************
 
-    public HorasR2Fragment() {
+    public Horas2Fragment() {
         // Required empty public constructor
     }
 
@@ -50,9 +48,9 @@ public class HorasR2Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_horas_r2, container, false);
+        View view = inflater.inflate(R.layout.fragment_horas2, container, false);
 
-        bVerH = (Button) view.findViewById(R.id.bVerH);
+        bVerH2 = (Button) view.findViewById(R.id.bVerH2);
         bAddHT2 = (Button) view.findViewById(R.id.bAddHT2);
         bAddHM2 = (Button) view.findViewById(R.id.bAddHM2);
         eFechaT2 = (EditText) view.findViewById(R.id.eFechaT2);
@@ -61,10 +59,11 @@ public class HorasR2Fragment extends Fragment {
         eHInicialM2 = (EditText) view.findViewById(R.id.eHInicialM2);
         eHFinalT2 = (EditText) view.findViewById(R.id.eHFinalT2);
         eHFinalM2 = (EditText) view.findViewById(R.id.eHFinalM2);
+        layout2 = (LinearLayout) view.findViewById(R.id.layout2);
 
 
         //*************BASE DE DATOS*****************************
-        //database = FirebaseDatabase.getInstance();
+        database = FirebaseDatabase.getInstance();
         //***************************************************
 
         bAddHT2.setOnClickListener(new View.OnClickListener() {
@@ -72,20 +71,19 @@ public class HorasR2Fragment extends Fragment {
             public void onClick(View v) {
 
                 //**********BASE DE DATOS********************
-                /*Fecha = eFechaT2.getText().toString();
+                Fecha = eFechaT2.getText().toString();
                 HInicial = eHInicialT2.getText().toString();
                 HFinal = eHFinalT2.getText().toString();
                 Id = "Retro2";
                 THoras = "THoras";
-                TPagar = "TPago";*/
+                TPagar = "TPago";
 
-               // Snackbar.make(v, Fecha, Snackbar.LENGTH_LONG)
-                 //       .setAction("Action", null).show();
 
-                //myRef = database.getReference().child(TAG_HTRABAJADAS);
-                //horasTrab2 = new HorasTrabajadas(Id, Fecha, HInicial, HFinal, THoras, TPagar);
 
-                //myRef.child(Id).child(Fecha).setValue(horasTrab2);
+                myRef = database.getReference().child(TAG_HTRABAJADAS);
+                horasTrab = new HorasTrabajadas(Id, Fecha, HInicial, HFinal, THoras, TPagar);
+
+                myRef.child(Id).child(Fecha).setValue(horasTrab);
                 //********************************************
 
             }
@@ -96,7 +94,7 @@ public class HorasR2Fragment extends Fragment {
             public void onClick(View v) {
 
                 //**********BASE DE DATOS********************
-                /*Fecha = eFechaM2.getText().toString();
+                Fecha = eFechaM2.getText().toString();
                 HInicial = eHInicialM2.getText().toString();
                 HFinal = eHFinalM2.getText().toString();
                 Id = "Retro2";
@@ -104,29 +102,28 @@ public class HorasR2Fragment extends Fragment {
                 TPagar = "TPago";
 
                 myRef = database.getReference().child(TAG_HMANTENIMIENTO);
-                horasMant2 = new HorasMantenimiento(Id, Fecha, HInicial, HFinal, THoras, TPagar);
+                horasMant = new HorasMantenimiento(Id, Fecha, HInicial, HFinal, THoras, TPagar);
 
-                myRef.child(Id).child(Fecha).setValue(horasMant2);*/
+                myRef.child(Id).child(Fecha).setValue(horasMant);
                 //********************************************
 
             }
         });
 
-        bVerH.setOnClickListener(new View.OnClickListener() {
+        bVerH2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                /*layout.setVisibility(View.GONE);
-                Fragment fragment = new HTrabR1Fragment();
+                layout2.setVisibility(View.GONE);
+                Fragment fragment = new HTrabR2Fragment();
                 FragmentActivity myContext = (FragmentActivity) getActivity();
-                myContext.getSupportFragmentManager().beginTransaction().replace(R.id.horasR1, fragment).commit();*/
+                myContext.getSupportFragmentManager().beginTransaction().replace(R.id.horasR2, fragment).commit();
                 //Intent intent = new Intent(getContext(), HTrabR1Fragment.class);
                 //startActivity(intent);
             }
         });
 
         return view;
-
     }
 
 }
